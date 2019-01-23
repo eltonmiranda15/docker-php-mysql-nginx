@@ -7,11 +7,20 @@ services:
       - "8080:80"
     volumes:
       - "./src:/src"
-      - "./src/docker/config/nginx/nginx.conf:/src/docker/config/nginx/nginx.conf"
+      - "./src/docker/config/nginx/nginx.conf:/etc/nginx/nginx.conf"
     networks: 
       - production-network
     depends_on:
       - php
+    
+  node:
+    build:
+      dockerfile: ./src/docker/node.dockerfile
+      context: .
+    volumes:
+      - "./src:/src"
+    networks: 
+      - production-network
 
   # Application service layer
   php:

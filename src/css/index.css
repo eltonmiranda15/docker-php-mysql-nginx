@@ -1,0 +1,14 @@
+body{
+  background-color: black;
+}
+.classeTeste {
+  color: red;
+  position: absolute;
+  left: 300px;
+}
+
+.testePHP {
+  color: pink;
+  position: absolute;
+  left: 300px;
+}
