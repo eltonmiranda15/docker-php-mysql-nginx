@@ -12,15 +12,6 @@ services:
       - production-network
     depends_on:
       - php
-    
-  node:
-    build:
-      dockerfile: ./src/docker/node.dockerfile
-      context: .
-    volumes:
-      - "./src:/src"
-    networks: 
-      - production-network
 
   # Application service layer
   php:
